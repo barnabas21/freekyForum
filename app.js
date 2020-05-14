@@ -10,7 +10,7 @@ const flash = require('connect-flash')
 
 var app = express()
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 // Global partials values for the view engine (to avoid having to define the path for each request)
 app.locals.partials = {navbar: 'partials/navbar', footer: 'partials/footer', head: 'partials/head'}
