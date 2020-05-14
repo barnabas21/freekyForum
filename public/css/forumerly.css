@@ -1,0 +1,101 @@
+#logoTrick:hover {
+  border-bottom: dotted;
+  color: #777;
+
+}
+body{ width: 100%; margin-top: 50px; font-family: "SF UI Text Light";}
+#general{ margin-top: 75px; height: 75px; }
+#logoLink:hover {
+  text-decoration: none;
+  color: #337ab7;
+}
+
+.ddmenu{ background-color: rgba(55, 219, 110, 0.918);}
+.ddmenu:hover{ background-color: rgba(55, 219, 110, 0.918); }
+.header{ 
+	background-image: url(/images/fonddd.png);
+  	height: 80vh; 
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}
+.container-ig{ position: absolute; top: 26%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(3, 3, 3, 0.6); border-radius: 0%; padding: 50px; border: 10px solid rgba(55, 219, 110, 0.918);}
+/*.top-right { position: absolute; top: 8px; right: 16px; }*/
+    	.formulaire{ width: 100%; height: auto; }
+		.btnn{ margin-left: 0%; width: 150px; height: 45px; border-radius: 0; background-color:  rgba(55, 219, 110, 0.918); border: 0; font-size: 15px; font-weight: 500; }
+		.btnn:hover{ background-color: aliceblue; color:  rgba(55, 219, 110, 0.918); }
+
+
+.subtitle{ margin-bottom: 5px; font-weight: 550; }
+#start{ margin-top: 30px; }
+#li{ color: aliceblue; border-radius: 0;}
+#li:hover{ background-color: aliceblue; color:  green;  }
+
+.navbar{ background-color: rgba(55, 219, 110, 0.918); border: 0px; }
+.navv{ margin-left: 50px; margin-top: 5px }
+
+.text{ ; }
+
+.menuPills{ height: 30px; padding: 5px;  border-radius:0; color: white }
+.menuPills:hover{ padding: 5px; padding-top: 10px; color: green; height: 40px; border-radius: 0; margin-top: 0; }
+
+#Dropdown{ margin-left: px; margin-top: px; color: aliceblue; height: 40px; padding-top: 0;}
+#Dropdown:hover{ padding: px; padding-top: px; background-color: ; color:rgba(55, 219, 110, 0.918);  height: 50px; border-radius: 0; margin-top: 0; }
+
+#Dropdown1{ margin-left: 0px; margin-top: px; height: 40px; padding-top: 12px; color: white; margin-left: 10px;}
+#Dropdown1:hover{ padding: px; padding-top: px; background-color: aliceblue; color:green;  height: 40px; border-radius: 0; margin-top: 0; }
+
+
+
+.img{height: 200px;background-size: cover;}
+label{ font-size: 18px; ; margin-left: 15px;}
+.signes{ padding-left: 70px; }
+.calendar{ color: rgba(55, 219, 110, 0.918); }
+.fck{ display: flex; }
+
+/* fonts */
+@font-face{
+	font-family: "SF UI Text Light";
+	src: url("SFUIText-Light.ttf") format("truetype");
+  }
+
+  @font-face{
+	font-family: "SF UI Text Medium";
+	src: url("./SFUIText-Medium.ttf") format("truetype");
+  }
+  @font-face{
+	font-family: "SF UI Text Regular";
+	src: url("./SFUIText-Regular.ttf") format("truetype");
+  }
+
+  /* Carousel */
+  .sliderImg {
+	width: auto;
+	position: relative;
+	background: transparent 3px 3px no-repeat;
+	opacity: 0.7;
+	width: 600px;
+}
+
+/* resposivité */
+@media only screen and (max-width: 500px) {
+	.container-ig{ 
+		position: absolute; 
+		top: 19%; 
+		left: 50%; 
+		transform: translate(-50%, -50%); 
+		background-color: rgba(3, 3, 3, 0.6); 
+		border-radius: 0%; 
+		padding: 25px; 
+		margin: 20px;
+		border: 10px solid rgba(55, 219, 110, 0.918); 
+	}
+		.header{
+			height: 60vh;
+		}
+  
+}
+
+@media (min-width: 768px) and (max-width: 965px) { 
+  
+}

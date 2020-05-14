@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{profile.username}}</title>
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <br>
+      <div class="container">
+        {{#success}}
+          <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/success}}
+        {{#error}}
+          <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/error}}
+        {{#viewerIsOwner}}
+        <a class="btn btn-default pull-right" href="/settings" role="button">Editer profil</a>
+        {{/viewerIsOwner}}
+        <div class="col-sm-4 col-xs-12">
+          <div class="col-sm-12 col-xs-6">
+            <img class="profilePicture" style="width: 80%" src="{{profile.img}}">
+          </div>
+          <div class="col-sm-10 col-xs-6">
+            {{#profile.admin}}
+              <h2><span style="color: #e84d30" title="Admin" data-toggle="tooltip" data-placement="right">{{profile.username}}</span></h2>
+            {{/profile.admin}}
+            {{^profile.admin}}
+              <h2>{{profile.username}}</h2>
+            {{/profile.admin}}
+            {{#profile.bio}}
+              <p class="text-muted">{{profile.bio}}</p>
+            {{/profile.bio}}
+            {{^profile.bio}}
+              <p class="text-muted">Apparamment cet utilisateur souhaite être dans l'anonymat.</p>
+            {{/profile.bio}}
+            <hr>
+            <ul style="list-style: none; padding-left: 0;">
+              <li><b>Date D'inscription: </b>{{profile.joinDate}}</li>
+              <li><b>Nombres de posts: </b>{{profile.postCount}}</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <ul class="nav nav-tabs">
+            {{^repliesTab}}
+              <!-- Threads tab -->
+              <li role="presentation" class="active"><a href="?tab=threads">Sujets</a></li>
+              <li role="presentation"><a href="?tab=replies">Réponses</a></li>
+            </ul>
+              <div>
+                <div style="margin-top: 20px" class="list-group">
+                  <table style="table-layout: fixed" class="table table-striped">
+                    <tr style="background-color: #158cba; color: #fff">
+                      <th style="width:40%">Subject</th>
+                      <th style="width: 40%; text-align: center">Réponses</th>
+                      <th style="width: 40%; text-align: center">Postés</th>
+                      
+                    </tr>
+                    {{#profile.threads}}
+                      <tr class="thread">
+                        <td><a class="no-link" href="/thread/{{ _id }}"><div class="text" style="height:100%;width:100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">{{ subject }}</div></a></td>
+                        <td style="text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">{{ numReplies }}</td>
+                        <td style="text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis" title="{{ formatedPostDate }}" data-toggle="tooltip" data-placement="top">{{ relativePostDate }}</td>
+                        <td style="text-align: center"><a class="no-link" href="/user/{{ lastPostBy }}"><div class="text" style="height:100%;width:100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis">
+                          {{#lastPosterIsAdmin}}
+                            <span style="color: #e84d30" title="Admin" data-toggle="tooltip" data-placement="right">{{ lastPostBy }}</span>
+                          {{/lastPosterIsAdmin}}
+                          {{^lastPosterIsAdmin}}
+                            {{ lastPostBy }}
+                          {{/lastPosterIsAdmin}}
+                        </div></a></td>
+                        <td style="text-align: center; overflow: hidden; white-space: nowrap; text-overflow: ellipsis" title="{{ formatedLastPostDate }}" data-toggle="tooltip" data-placement="top">{{ relativeLastPostDate }}</td>
+                      </tr>
+                    {{/profile.threads}}
+
+                  </table>
+                </div>
+                {{^profile.threads}}
+                  <h3 class="text-muted">Pas de sujet créer pour cet utilisateur.</h3>
+                {{/profile.threads}}
+              </div>
+            {{/repliesTab}}
+            {{#repliesTab}}
+              <!-- Replies tab -->
+              <li role="presentation"><a href="?tab=threads">Sujets</a></li>
+              <li role="presentation" class="active"><a href="?tab=replies">Réponses</a></li>
+            </ul>
+              <div>
+                {{#profile.replies}}
+                <div style="display: flex; overflow-wrap: break-word; height: 100%; width: 100%; padding-left: 0; margin-top: 10px" class="list-group-item pull-right">
+                  <div style="padding-left: 20px">
+                    <a href="/thread/{{parentThreadID}}">{{parentThreadSubject}}</a><br>
+                    <small title="{{ formatedPostDate }}" data-toggle="tooltip" data-placement="top">{{ relativePostDate }}</small>
+                    <p style="white-space: pre-wrap" class="lead">{{ message }}</p>
+                  </div>
+                </div>
+                {{/profile.replies}}
+                {{^profile.replies}}
+                  <h3 class="text-muted">Pas de réponses pour cet utilisateur.</h3>
+                {{/profile.replies}}
+              </div>
+            {{/repliesTab}}
+
+        </div>
+      </div>
+    {{>footer}}
+  </body>
+</html>

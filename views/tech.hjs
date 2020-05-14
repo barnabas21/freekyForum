@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dévéloppement web et mobile</title>
+    <link rel="stylesheet" href="/css/master.css">
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <div class="container">
+
+      <ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li class="active">Espace Dev</li>
+      </ol>
+
+      <div class="list-group">
+        <a href="/technology/programming" class="list-group-item"><span style="font-size: 20px">Nouvelles Technologies</span> <br></a>
+        <a href="/technology/att" class="list-group-item"><span style="font-size: 20px">Dévéloppement Front-end</span> <br>Android, Web, ...</a>
+        <a href="/technology/webdev" class="list-group-item"><span style="font-size: 20px">Dévéloppement Back-end</span> <br>APIs, nodeJs, PHP, ...</a>
+        
+      </div>
+
+    </div>
+    {{>footer}}
+  </body>
+</html>

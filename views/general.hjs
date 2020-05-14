@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>General</title>
+    <link rel="stylesheet" href="/css/master.css">
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    
+    <div class="container">
+
+      <ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li class="active">Covid-19</li>
+      </ol>
+
+      <div class="list-group">
+        
+        <div role="separator" class="divider"></div>
+        <a href="/general/meta" class="list-group-item"><span style="font-size: 20px">COVID-19</span> <br>Discuter de ses inquiétudes par rapport au COVID-19.</a>
+    <a href="/general/off-topic" class="list-group-item"><span style="font-size: 20px">Technologie et Santé</span> <br>.</a>
+    <a href="/general/off-topic" class="list-group-item"><span style="font-size: 20px">Autres sujets (Dans le contexte du COVID-19)</span> <br>Vous ne savez pas dans quelle catégorie situer votre sujet. Le poster ici.</a>
+    </div>
+    {{>footer}}
+  </body>
+</html>

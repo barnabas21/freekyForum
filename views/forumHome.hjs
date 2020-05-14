@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>freekyForum</title>
+    {{> head }}
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+         {{> navbar }}
+         <!--div id="carousel-example-generic" class="carousel slide" data-ride="carousel"-->
+  
+  <div id="bgslider">
+    <!--figure>
+        <img class="sliderImg" src="/images/fonddd.png" alt="Slider">
+        <img class="sliderImg" src="/images/Discussion.png" alt="Slider">
+        <img class="sliderImg" src="/images/fond3.jpg" alt="Slider">
+        
+    </figure-->
+    <center>
+        <div class="container-ig">
+            
+            <div class="text-white text-center text">
+                <h1 style="font-size: 35px; color:aliceblue; font-weight:bold"> BIENVENUE <br> SUR FREEKYFORUM </h1>
+                <div class="text-center subtitle" style="color: aliceblue;">
+                  Faites un test gratuit si <br> vous pensez avoir des symptômes liés au coronavirus 
+                </div>
+            </div>
+            
+              <div class="formulaire">
+                <a href="/consult"><button class="btn btn-primary btnn"> Commencer </button></a>
+              </div>
+        </div>
+        </center>
+
+     
+</div>
+    </header>
+    <div class="container" id="start">
+      {{#success}}
+        <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/success}}
+      {{#error}}
+        <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/error}}
+
+
+
+<ul class="nav nav-tabs nav-justified">
+  <li class="active"><a data-toggle="tab" href="#home">COVID-19</a></li>
+  <li><a data-toggle="tab" href="#menu2"> Espace Dev </a></li>
+  <li><a data-toggle="tab" href="#menu1"> Administrateurs </a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h3></h3>
+    <a href="/general/meta" class="list-group-item"><span style="font-size: 20px">COVID-19</span> <br>Discuter de ses inquiétudes par rapport au COVID-19.</a>
+    <a href="/general/off-topic" class="list-group-item"><span style="font-size: 20px">Technologie et Santé</span> <br>.</a>
+    <a href="/general/off-topic" class="list-group-item"><span style="font-size: 20px">Autres sujets (Dans le contexte du COVID-19)</span> <br>Vous ne savez pas dans quelle catégorie situer votre sujet. Le poster ici.</a>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h3></h3>
+        <a href="/other/admins" class="list-group-item"><span style="font-size: 20px">Administrateurs <i style="font-size: medium" class="fa fa-lock" aria-hidden="true"></i></span> <br>Seuls les admins ont accès à cette partie du site </a>
+        <a href="/other/admins" class="list-group-item"><span style="font-size: 20px"> ... </span> <br></a>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <h3></h3>
+        <a href="/technology/att" class="list-group-item"><span style="font-size: 20px">Dévéloppement Front-end</span> <br>Android, Web, ...</a>
+        <a href="/technology/webdev" class="list-group-item"><span style="font-size: 20px">Dévéloppement Back-end</span> <br>APIs, nodeJs, PHP, ...</a>
+        <a href="/technology/programming" class="list-group-item"><span style="font-size: 20px">Nouvelles Technologies</span> <br></a>
+  </div>
+</div>
+
+
+      
+    </div>
+    {{> footer}}
+  </body>
+</html>

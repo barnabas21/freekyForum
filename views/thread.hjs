@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ thread.browserTitle }}</title>
+    <link rel="stylesheet" href="/css/master.css">
+    {{> head }}
+  </head>
+  <body>
+    {{> navbar }}
+    <div class="container">
+      {{#message}}
+        <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/message}}
+      <ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/{{ thread.lcCategory }}">{{ thread.category }}</a></li>
+        <li><a href="/{{ thread.lcCategory }}/{{ thread.lcTopic }}">{{ thread.topic }}</a></li>
+      </ol>
+
+      <div class="list-group">
+        <div style="font-size: 20px; display: block; width: inherit; overflow: hidden; white-space: nowrap; text-overflow: ellipsis" class="list-group-item active">{{ thread.subject }}</div>
+        <div style="display: flex; height: 100%; width: 100%; padding-left: 0" class="list-group-item">
+          <div class="col-sm-2 col-xs-4" style="text-align: center">
+            <img style="width: 70%" src="{{thread.posterImg}}" onerror="this.src='/images/profile.png'">
+            <a style="display: block; width: 100%; padding-top: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis" href="/user/{{ thread.posterUsername }}">
+              {{#thread.posterIsAdmin}}
+                <span style="color: #e84d30" title="Admin" data-toggle="tooltip" data-placement="right">{{ thread.posterUsername }}</span>
+              {{/thread.posterIsAdmin}}
+              {{^thread.posterIsAdmin}}
+                {{ thread.posterUsername }}
+              {{/thread.posterIsAdmin}}
+            </a>
+          </div>
+          <div style="padding-left: 20px; border-left: solid rgba(51, 51, 51, 0.11) 1px" class="col-sm-10 col-xs-9 pull-right">
+            <small title="{{ thread.formatedPostDate }}" data-toggle="tooltip" data-placement="top">{{ thread.relativePostDate }}</small>
+            <p style="white-space: pre-wrap; overflow-wrap: break-word;" class="lead">{{ thread.body }}</p>
+          </div>
+        </div>
+        {{#thread.replies}}
+          <div style="display: flex; overflow-wrap: break-word; height: 100%; width: 100%; padding-left: 0" class="list-group-item pull-right">
+            <div class="col-sm-15 col-xs-3" style="text-align: center">
+              <img style="width: 70%" src="{{posterImg}}" onerror="this.src='/images/profile.png'">
+              <a style="display: block; width: 100%; padding-top: 5px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis" href="/user/{{ posterUsername }}">
+                {{#posterIsAdmin}}
+                  <span style="color: #e84d30" title="Admin" data-toggle="tooltip" data-placement="right">{{ posterUsername }}</span>
+                {{/posterIsAdmin}}
+                {{^posterIsAdmin}}
+                  {{ posterUsername }}
+                {{/posterIsAdmin}}
+              </a>
+            </div>
+            <div style="padding-left: 20px; border-left: solid rgba(51, 51, 51, 0.11) 1px" class="col-sm-11 col-xs-9 pull-right">
+              <small title="{{ formatedPostDate }}" data-toggle="tooltip" data-placement="top">{{ relativePostDate }}</small>
+              <p style="white-space: pre-wrap" class="lead">{{ message }}</p>
+            </div>
+          </div>
+        {{/thread.replies}}
+
+      </div>
+
+      <a style="clear: right; margin-top: 10px" class="pull-right btn btn-primary" href="/createReply/{{ thread._id }}" role="button">Répondre</a>
+
+    </div>
+    {{> footer }}
+  </body>
+</html>

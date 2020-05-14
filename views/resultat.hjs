@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{profile.username}}</title>
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <br>
+      <div class="container">
+        {{#success}}
+          <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/success}}
+        {{#error}}
+          <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/error}}
+        
+
+         <div class="row">
+		<section>
+        <div class="wizard">
+            <h1 class="text-center"> Etape finale </h1>
+              <div class="contenu" style="padding: 20px; padding-top: 1px">
+              <h4 class="text-center" style="color: rgba(255, 32, 24, 0.918); margin-left: 0px;">
+                 Après ce bref questionnaire, voyez par vous même si vos réponses correspondent aux signes évolutifs d'un cas réel.
+                <br> Si oui alors nous vous conseillons d'appeler le <span style="color: rgba(55, 219, 110, 0.918); padding: 2px;"> 111</span> pour avoir l'avis d'un professionnel sur le sujet.
+                <br> Sinon continuez de vous protéger en adoptant les <a href="/resultP">mésures</a> de protection mises en place par <a href="" style="color: rgba(55, 219, 110, 0.918); font-size: 15px; padding: 2px; border-radius: 2px"> les autorités</a> et <a href="https://www.who.int/fr/emergencies/diseases/novel-coronavirus-2019/advice-for-public" style="background-color: rgba(55, 219, 110, 0.918); color:White; font-size: 15px; padding: 2px; border-radius: 2px"> l'OMS </a>. </h4>
+          </div>
+        </div>
+        <div class="container-comp">
+          <div class="signes">
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 1 à 3</h3>
+              <ul>
+                <li> Symptômes presque similaires à un rhume. </li>
+                <li> Léger mal de gorge. </li>
+                <li> Pas de fièvre, pas de fatigue, un appétit normal. </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 4</h3>
+              <ul>
+                <li> Légers maux de gorges, courbatures </li>
+                <li> Voix rauque </li>
+                <li> Température corporelle d'environ 36,5 C </li>
+                <li> Légère perte d'appétit </li>
+                <li> Légers maux de tête </li>
+                <li> diarrhée ou indigestio mineure </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 5</h3>
+              <ul>
+                <li> Maux de gorge, voix rauque. </li>
+                <li> Légère fièvre, entre 36,5 et 36,70 C. </li>
+                <li> Corps faible, douleurs articulaires. </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 6</h3>
+              <ul>
+                <li> Légère fièvre, environ 37 C. </li>
+                <li> Toux accompagnée de mucus ou de toux sèche. </li>
+                <li> Maux de gorge en mangeant, en parlant ou en avalant. </li>
+                <li> Fatigue, nausée. </li>
+                <li> Difficultés restiratoires occasionnelles. </li>
+                <li> Douleurs aux doigts. </li>
+                <li> Diarrhée vomissements. </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 7</h3>
+              <ul>
+                <li> Fièvre plus élevée, entre 37,4 et 37,8 C. </li>
+                <li> Toux avec crachats. </li>
+                <li> Maux de corps et de tête. </li>
+                <li> Diarrhée plus sévère. </li>
+                <li> Vomir. </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 8</h3>
+              <ul>
+                <li> Fièvre entre 38 C ou plus. </li>
+                <li> Difficultés respiratoires, poitrine lourde. </li>
+                <li> Toux continuelle. </li>
+                <li> Maux de tête, douleurs articulaires et douleurs à la hanche. </li>
+              </ul>
+            </p>
+            <p>
+              <h3><span class="glyphicon glyphicon-calendar calendar"></span> Jour 9</h3>
+              <ul>
+                <li> Les symptômes s'aggravent. </li>
+                <li> Fièvre plus élevée. </li>
+                <li> Toux plus persistante, plus sévère. </li>
+                <li> Respiration douleureuse </li>
+              </ul>
+            </p>
+            
+            <p class="text-right" style="margin-top: 50px;"> Source : <a href=""> Solidarité citoyenne COVID-19 TOGO </a></p>
+          </div>
+        </div>
+    </section>
+   </div>
+
+
+        </div>
+    {{>footer}}
+  </body>
+</html>

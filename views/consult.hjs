@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{profile.username}}</title>
+    {{>head}}
+   
+  </head>
+  <body>
+    {{>navbar}}
+    <br>
+      <div class="container">
+        {{#success}}
+          <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/success}}
+        {{#error}}
+          <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+        {{/error}}
+        
+
+         <div class="row">
+		<section>
+        <div class="wizard">
+            <h1 class="text-center"> Suis-je positif ou négatif au COVID-19 ? </h1>
+            <h4 class="text-center" style="color: rgba(255, 32, 24, 0.918); margin-left: 0px;"> 
+                Faites le test en répondant sincèrement aux questions ci-dessous!
+                <br>Ceci vous permettra d'avoir une idée générale sur votre état de santé par rapport au coronavirus. 
+            </h4>
+
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <!--i class="glyphicon glyphicon-heart"></i-->
+                                1
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <!--i class="glyphicon glyphicon-pencil"></i-->
+                                2
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <!--i class="glyphicon glyphicon-picture"></i-->
+                                3
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <!--i class="glyphicon glyphicon-ok"></i-->
+                                4
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <form role="form" action="/resultat" method="GET">
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1" style="">
+                        <h2>Préambule</h2>
+                        <p>Cochez les cases ci-dessous en étant aussi précis que possible.</p>
+                        <p>
+                            <div class="form-check fck" >
+                               <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" >
+                               <label class="form-check-label" for="exampleRadios1">
+                                   Aviez-vous voyagez ces derniers à l'interieur ou à l'extérirur du pays?
+                               </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Aviez-vous été en contact avec quelqu'un tout en gardant la distance de sécurité?
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Lavez-vous régulièrement les mains?
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Portez-vous toujours vos masques une fois hors de chez vous?
+                                </label>
+                            </div>
+                        </p>
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-primary next-step">Suivant</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step2">
+                        <h2>Signes évolutifs du COVID-19</h2>
+                        <p>Cochez les cases ci-dessous en étant aussi précis que possible.</p>
+                        <p>
+                            <div class="form-check fck" >
+                               <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" >
+                               <label class="form-check-label" for="exampleRadios1">
+                                    Semblant de rhume.
+                               </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                     Léger mal de gorge.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Léger mal de tete.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Légère perte d'appetit.
+                                </label>
+                            </div>
+                        </p>                        
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-danger prev-step">Précédent</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Suivant</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="step3">
+                        <h2>Signes évolutifs du COVID-19</h2>
+                        <p>Cochez les cases ci-dessous en étant aussi précis que possible.</p>
+                        <p>
+                            <div class="form-check fck" >
+                               <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" >
+                               <label class="form-check-label" for="exampleRadios1">
+                                    Diarrhée mineure.
+                               </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                     Toux accompagnée de mucus ou de toux sèche.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Difficulté respiratoire occasionnelle.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Fatigue,nausée et douleur aux doigts.
+                                </label>
+                            </div>
+                        </p>  
+                        <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-danger prev-step">Précédent</button></li>
+                            <li><button type="button" class="btn btn-primary next-step">Suivant</button></li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane" role="tabpanel" id="complete">
+                        <h2>Signes évolutifs du COVID-19</h2>
+                        <p>Cochez les cases ci-dessous en étant aussi précis que possible.</p>
+                        <p>
+                            <div class="form-check fck" >
+                               <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios1" value="option1" >
+                               <label class="form-check-label" for="exampleRadios1">
+                                  Les symptômes s'aggravent.
+                               </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                      Fièvre plus élevée.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                   Toux plus persistante, plus sévère.
+                                </label>
+                            </div>
+                            <div class="form-check fck" >
+                                <input class="form-check-input" type="checkbox" name="exampleRadios" id="exampleRadios2" value="option2">
+                                <label class="form-check-label" for="exampleRadios2">
+                                     Respiration difficile et laborieuse.
+                                </label>
+                            </div>
+                        </p>  
+                                               <ul class="list-inline pull-right">
+                            <li><button type="button" class="btn btn-danger prev-step">Précédent</button></li>
+                            <li><!--a href="/resultat"--><button type="submit" class="btn btn-primary btn-info-full next-step">Valider</button><!--/a--></li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+        </div>
+    </section>
+   </div>
+
+
+        </div>
+    {{>footer}}
+  </body>
+</html>

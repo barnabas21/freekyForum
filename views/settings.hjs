@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Paramètres</title>
+    <link rel="stylesheet" href="/css/master.css">
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <div class="container">
+      {{#success}}
+        <div class="alert alert-success" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/success}}
+      {{#error}}
+        <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/error}}
+      <a class="btn btn-default pull-right" href="/user/{{user.username}}" role="button">Voir profil</a>
+      <div style="margin-top: 38px" class="col-sm-6">
+        <h2>Profil</h2>
+        <hr>
+        <div class="col-sm-5">
+          <h4>Photo de profil</h4>
+          <img id="profile-img" class="profilePicture" title="Select new picture" data-toggle="tooltip" data-placement="right" style="width: 100%; margin-bottom: 15px" src="{{user.img}}">
+          <br>
+
+          <form action="/upload" method="post" enctype="multipart/form-data">
+            <input id="file-selector"  type="file" name="avatar">
+            <button id="upload-button" type="submit" class="btn btn-primary">Charger image</button>
+          </form>
+
+        </div>
+        <div class="col-sm-10">
+          <h4>Bio</h4>
+          <form action="/updateBio" method="post">
+            <div class="form-group">
+              <textarea rows="3" type="text" class="form-control" name="bio"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Mise à jour bio</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <h2>Compte</h2>
+        <hr>
+        <h4>Changer Mot de passe</h4>
+        <form action="/changePassword" method="post">
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Mot de passe actuel">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="newPassword" placeholder="Nouveau mot de passe">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="newPassword2" placeholder="Nouveau mot de passe (resaisir)">
+          </div>
+          <button type="submit" class="btn btn-default"> Valider </button>
+        </form>
+        <hr>
+        <h4>Supprimer Compte</h4>
+        <form action="/deleteAccount" method="post">
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Mot de passe">
+          </div>
+          <button type="submit" class="btn btn-danger">Supprimer Compte</button>
+        </form>
+      </div>
+    </div>
+    {{>footer}}
+  </body>
+</html>

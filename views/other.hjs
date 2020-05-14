@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Autres</title>
+    <link rel="stylesheet" href="/css/master.css">
+    {{>head}}
+  </head>
+  <body>
+    {{>navbar}}
+    <div class="container">
+      {{#error}}
+        <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{.}}</div>
+      {{/error}}
+      <ol class="breadcrumb">
+        <li><a href="/">Accueil</a></li>
+        <li class="active">Administrateurs</li>
+      </ol>
+
+      <div class="list-group">
+        <a href="/other/admins" class="list-group-item"><span style="font-size: 20px">Administrateurs <i style="font-size: medium" class="fa fa-lock" aria-hidden="true"></i></span> <br>Seuls les admins ont accès à cette partie du site </a>
+        <a href="/other/admins" class="list-group-item"><span style="font-size: 20px"> ... </span> <br></a>
+      </div>
+
+    </div>
+    {{>footer}}
+  </body>
+</html>
