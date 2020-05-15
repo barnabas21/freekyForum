@@ -70,5 +70,5 @@
 
   @media only screen and (min-width: 768px) {
       .navbar-header{ display: contents; }
-    .openbtn{  float: right; }
+      .openbtn{  float: right; }
 }
